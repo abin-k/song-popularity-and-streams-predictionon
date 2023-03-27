@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recommendation</title>
+    <style>
+        body{
+            /* background-color: rgb(70, 70, 133); */
+            background-image: url("https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg");
+            background-size: cover;
+            color: white;
+        }
+        #result {
+            display: flex;
+            justify-content: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        #in{
+            height: 34px;
+            width: 708px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>SONG RECOMMENDATION SYSTEM</h1>
+    <div id="result">
+                <form action="{% url 'recommendation' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="enter song name" id="in" name="song"><br>
+                    <input type="submit" value="get recommendation"><br>
+                </form>     
+    </div>
+    <div id="result">      
+    </div>
+
+    <h1>{{song}}</h1>
+
+</body>
+</html>

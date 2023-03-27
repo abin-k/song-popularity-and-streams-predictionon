@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <style>
+        body {
+            /* background-color: rgb(70, 70, 133); */
+            background-image: url("https://w0.peakpx.com/wallpaper/954/290/HD-wallpaper-landscape-river-nature-windows-11-sunrise-windows-11.jpg");
+            background-size: cover;
+            color: white;
+
+        }
+
+        #main form{
+            display: flex;
+            justify-content: center;
+        }
+
+        #second-div {
+            margin-left: 50px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+
+
+        }
+
+        button {
+            width: 120px;
+            height: 40px;
+            border-radius: 20px;
+            color: red;
+            /* background-color: rgb(156, 243, 15); */
+
+        }
+
+        input {
+            background: white;
+            border: solid 1px red;
+            height: 20px;
+            border-radius: 0px;
+        }
+        select{
+            background: white;
+            border: solid 1px red;
+            height: 20px;
+            border-radius: 0px;
+            width: 175px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SONG POPULARITY PREDICTION</h1>
+    <div id="main">
+        <form action="{% url 'streamsresult_page' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="">Highest Charting Position</label><br>
+                <input type="text" placeholder="enter the position" name="n1"><br><br>
+                <label for="">Number of Times Charted</label><br>
+                <input type="text" placeholder="enter number of time charted" name="n2"><br><br>
+                <label for="">Artist Followers</label><br>
+                <input type="text" placeholder="enter artist Followers no. " name="n3"><br><br>
+                <label for="">Popularity</label><br>
+                <input type="text" placeholder="enter a value b/w 0 & 100" name="n4"><br><br>
+                <label for="">Danceability</label><br>
+                <input type="text" placeholder="enter a value b/w 0 & 1" name="n5"><br><br>
+            <!-- </div>
+            <div id="second-div"> -->
+                <label for="">Speechiness (spoken words in a track)</label><br>
+                <input type="text" placeholder="enter a value b/w 0 & 1" name="n8"><br><br>
+                <label for="">Tempo (beats per minute)</label><br>
+                <input type="text" placeholder="enter value b/w 0 & 1BPM" name="n11"><br><br>
+                <input type="submit" value="predict">
+            </div>
+        </form>
+    </div>
+    
+
+    
+</body>
+
+</html>
